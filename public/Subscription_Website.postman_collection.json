@@ -1,0 +1,230 @@
+{
+	"info": {
+		"_postman_id": "7d1f3110-e3c7-4cc6-83bd-f18d6b53147b",
+		"name": "Subscription_Website",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "User Stores",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"John Doe\",\r\n    \"email\":\"johndoe@mail2.com\",\r\n    \"password\": \"JohnDoe\",\r\n    \"password_confirmation\": \"JohnDoe\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "subscription_plan.test/api/users",
+							"host": [
+								"subscription_plan",
+								"test"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Subscribes",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "websites[0]",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "subscription_plan.test/api/user/user-subscribes/1",
+							"host": [
+								"subscription_plan",
+								"test"
+							],
+							"path": [
+								"api",
+								"user",
+								"user-subscribes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User UnSubscribe",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "websites[0]",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "subscription_plan.test/api/user/user-unsubscribes/5",
+							"host": [
+								"subscription_plan",
+								"test"
+							],
+							"path": [
+								"api",
+								"user",
+								"user-unsubscribes",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Website",
+			"item": [
+				{
+					"name": "Website Store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"web_name\": \"New Website\",\r\n    \"url\":\"http://google.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "subscription_plan.test/api/websites",
+							"host": [
+								"subscription_plan",
+								"test"
+							],
+							"path": [
+								"api",
+								"websites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Website Index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "subscription_plan.test/api/websites",
+							"host": [
+								"subscription_plan",
+								"test"
+							],
+							"path": [
+								"api",
+								"websites"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Stores Posts",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "New Post",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "This is it",
+							"type": "text"
+						},
+						{
+							"key": "body",
+							"value": "A new post",
+							"type": "text"
+						},
+						{
+							"key": "website_id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "subscription_plan.test/api/posts",
+					"host": [
+						"subscription_plan",
+						"test"
+					],
+					"path": [
+						"api",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
